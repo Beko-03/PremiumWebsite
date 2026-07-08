@@ -11,15 +11,15 @@
 
 export const operator = {
   /** Dein Name oder Firmenname (Betreiber der Demo) */
-  name: "[Dein Name / Firmenname]",
+  name: "Bektas Acar / BAI-Tech ",
   /** Straße und Hausnummer */
-  street: "[Straße und Hausnummer]",
+  street: "Tiefenbruchstraße 42",
   /** PLZ und Ort */
-  city: "[PLZ und Ort]",
+  city: "44651, Herne",
   /** Land */
   country: "Deutschland",
   /** Kontakt-E-Mail (Pflicht im Impressum) */
-  email: "[deine@email.de]",
+  email: "info@bai-tech.de",
   /** Telefonnummer (optional — leer lassen, dann wird die Zeile ausgeblendet) */
   phone: "",
   /** USt-IdNr. (optional, z. B. "DE123456789" — leer = Abschnitt ausgeblendet) */
