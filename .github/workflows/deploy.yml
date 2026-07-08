@@ -1,0 +1,49 @@
+name: Build & Deploy zu Hostinger
+
+# Läuft bei jedem Push nach main (oder manuell über den "Run workflow"-Button)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Verhindert parallele Deploys, wenn schnell hintereinander gepusht wird
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Statische Seite bauen (erzeugt out/)
+        run: npm run build
+
+      - name: Per FTP zu Hostinger hochladen
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Inhalt des Build-Ordners …
+          local-dir: ./out/
+          # … in das Web-Wurzelverzeichnis von Hostinger.
+          # Falls dein FTP-Zugang schon INNERHALB von public_html landet,
+          # hier auf "./" ändern.
+          server-dir: ./public_html/
+          # .htaccess und andere Dotfiles mit hochladen, nur Git/CI-Reste auslassen
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.DS_Store
