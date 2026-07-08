@@ -1,0 +1,90 @@
+# ==========================================================================
+# Marlow Coffee Roasters — Apache/LiteSpeed-Konfiguration (Hostinger)
+# Wird beim Build nach out/.htaccess kopiert und liegt dann im public_html.
+# Statische Seite: kein PHP, keine Datenbank — hier geht es um Security-Header,
+# HTTPS-Erzwingung und den Schutz sensibler Dateien.
+# ==========================================================================
+
+# ---------- HTTPS erzwingen ----------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Alle http-Anfragen dauerhaft auf https umleiten
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# ---------- Security-Header ----------
+<IfModule mod_headers.c>
+  # HSTS: erzwingt HTTPS im Browser (erst aktivieren, wenn SSL sicher läuft)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Kein MIME-Sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Clickjacking-Schutz (alt); moderne Variante steht zusätzlich in der CSP
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Referrer sparsam übertragen
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Nicht benötigte Browser-APIs abschalten
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+
+  # Content-Security-Policy
+  # Hinweis: 'unsafe-inline' bei script-src ist bei einem statischen Next.js-Export
+  # nötig (Hydration-Inline-Skripte; ohne Server keine Nonces möglich). Es werden
+  # ausschließlich eigene, gebündelte Skripte geladen — keine externen Quellen.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+
+  # Server-Kennung nicht preisgeben (falls das Modul es zulässt)
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+</IfModule>
+
+# ---------- Verzeichnis-Listing abschalten ----------
+Options -Indexes
+
+# ---------- Sensible Dateien blockieren ----------
+# Dotfiles (.git, .env, .htaccess selbst …) und Konfig-/Quelldateien sperren,
+# falls versehentlich mehr als der out/-Inhalt hochgeladen wurde.
+<FilesMatch "(^\.|\.(env|git|gitignore|json|lock|ts|tsx|md|map|toml|yml|yaml)$)">
+  Require all denied
+</FilesMatch>
+
+# .well-known (z. B. SSL/ACME) trotzdem erreichbar lassen
+<IfModule mod_rewrite.c>
+  RewriteRule ^\.well-known/ - [L]
+</IfModule>
+
+# ---------- Caching (Performance, kein Sicherheitsaspekt) ----------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Immutable Build-Assets (Next.js hasht die Dateinamen) lange cachen
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType video/mp4 "access plus 6 months"
+  ExpiresByType font/woff2 "access plus 1 year"
+  # HTML immer frisch prüfen
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Gehashte Assets als unveränderlich markieren
+  <FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# ---------- Kompression ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---------- Eigene Fehlerseite ----------
+ErrorDocument 404 /404.html

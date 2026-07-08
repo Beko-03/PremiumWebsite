@@ -149,8 +149,8 @@ export default function Footer() {
             <span>{t("footer.rights")}</span>
           </p>
           <p>
-            <a href="#">{t("footer.imprint")}</a> · <a href="#">{t("footer.privacy")}</a> ·{" "}
-            <a href="#">{t("footer.shipping")}</a>
+            <Link href="/impressum/">{t("footer.imprint")}</Link> ·{" "}
+            <Link href="/datenschutz/">{t("footer.privacy")}</Link> · <a href="#">{t("footer.shipping")}</a>
           </p>
         </div>
       </div>
