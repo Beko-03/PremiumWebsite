@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marlow Coffee Roasters — Specialty Coffee, frisch geröstet in Münster</title>
+  <meta name="description" content="Kleinserien-Rösterei in Münster: Direct-Trade-Kaffee, jeden Dienstag frisch geröstet. Shop, Abo, Rösterei-Café mit Reservierung." data-i18n-content="meta.home">
+  <link rel="canonical" href="https://www.marlow-roasters.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Marlow Coffee Roasters — Specialty Coffee aus Münster">
+  <meta property="og:description" content="Direct-Trade-Kaffee, jeden Dienstag frisch geröstet. Shop, Abo & Rösterei-Café.">
+  <meta property="og:image" content="assets/img/roastery-hall.webp">
+  <meta property="og:locale" content="de_DE">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="preload" as="video" href="assets/video/hero-roast.mp4" type="video/mp4">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Marlow Coffee Roasters",
+    "description": "Specialty-Kaffeerösterei mit Café in Münster. Direct Trade, wöchentliche Röstung, öffentliche Cuppings.",
+    "image": "assets/img/roastery-hall.webp",
+    "servesCuisine": "Coffee",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hafenstraße 12",
+      "postalCode": "48153",
+      "addressLocality": "Münster",
+      "addressCountry": "DE"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00" }
+    ],
+    "acceptsReservations": "True",
+    "email": "hello@marlow.coffee"
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Zum Inhalt springen</a>
+
+  <!-- SVG-Sprite: Signet, Tüte, UI-Icons -->
+  <svg aria-hidden="true" style="display:none">
+    <defs>
+      <symbol id="i-bean" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="32" r="28.5"/>
+        <path d="M32 13.5c-7.6 0-13.7 8.3-13.7 18.5S24.4 50.5 32 50.5 45.7 42.2 45.7 32 39.6 13.5 32 13.5Z"/>
+        <path d="M33.8 15.2c-4.2 5.6-7.4 9.6-3 16.6s1.6 11.2-2.7 16.9" stroke-width="2"/>
+      </symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+      </symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+      </symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+        <path d="M15 18H9"/>
+        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+        <circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
+        <circle cx="12" cy="10" r="3"/>
+      </symbol>
+      <symbol id="i-cup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 2v2"/><path d="M14 2v2"/>
+        <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z"/>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+      </symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+        <path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 2v4"/><path d="M16 2v4"/>
+        <rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="20" x="2" y="2" rx="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+      </symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Marlow Coffee Roasters — Startseite">
+        <svg class="brand__mark" aria-hidden="true"><use href="#i-bean"/></svg>
+        <span>
+          <span class="brand__name">MARLOW</span>
+          <span class="brand__tag">Coffee Roasters</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen">
+        <svg class="icon-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="shop.html" data-i18n="nav.shop">Shop</a></li>
+          <li><a class="nav__link" href="roesterei.html" data-i18n="nav.roastery">Rösterei</a></li>
+          <li><a class="nav__link" href="journal.html" data-i18n="nav.journal">Journal</a></li>
+          <li><a class="nav__link" href="b2b.html" data-i18n="nav.b2b">Für Cafés</a></li>
+          <li><a class="nav__link" href="kontakt.html" data-i18n="nav.contact">Kontakt</a></li>
+        </ul>
+        <a class="btn btn--primary" href="reservierung.html" data-i18n="nav.reserve">Reservieren</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn icon-btn--lang js-lang-toggle" type="button">EN</button>
+        <button class="icon-btn js-cart-open" type="button" aria-label="Warenkorb öffnen" data-i18n-aria-label="a11y.cart">
+          <svg aria-hidden="true"><use href="#i-cart"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Scroll-Video-Hero: „Roast in Motion" ============ -->
+    <section class="vhero" aria-label="Intro">
+      <div class="vhero__stage">
+        <video class="vhero__media" autoplay muted playsinline preload="auto"
+               poster="assets/img/roastery-hall.webp"
+               src="assets/video/hero-roast.mp4"></video>
+        <div class="vhero__fade" aria-hidden="true"></div>
+        <div class="vhero__content">
+          <p class="eyebrow" data-i18n="home.hero.eyebrow">Kleinserien · Im Haus geröstet</p>
+          <h1>
+            <span class="vhero__line" data-i18n="home.hero.l1">Ehrlicher Kaffee,</span>
+            <span class="vhero__line" data-i18n="home.hero.l2">geröstet mit <em>Geduld</em>.</span>
+          </h1>
+          <p class="vhero__lede" data-i18n="home.hero.lede">
+            Wir kaufen direkt bei Familien, die wir beim Namen kennen, und rösten
+            jeden Dienstag in 12-Kilo-Chargen — frischer kommt Kaffee nicht in deine Tasse.
+          </p>
+          <div class="vhero__actions">
+            <a class="btn btn--primary" href="shop.html">
+              <span data-i18n="home.hero.cta1">Röstungen entdecken</span>
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--ghost vhero__btn-ghost" href="reservierung.html" data-i18n="home.hero.cta2">Tisch reservieren</a>
+          </div>
+        </div>
+        <p class="vhero__scrollhint" aria-hidden="true" data-i18n="home.hero.scroll">Scrollen</p>
+      </div>
+    </section>
+
+    <!-- ============ Röst-Ticker ============ -->
+    <section class="roast-ticker" aria-label="Röstkalender" data-roast-ticker>
+      <div class="container roast-ticker__grid">
+        <span class="roast-ticker__flame"><svg aria-hidden="true"><use href="#i-flame"/></svg></span>
+        <div class="roast-ticker__label">
+          <strong data-i18n="home.ticker.title">Live aus der Rösterei</strong>
+          <span data-i18n="home.ticker.sub">Geröstet wird jeden Dienstag — versendet am selben Tag</span>
+        </div>
+        <div class="roast-ticker__stat">
+          <strong class="js-roast-batch">#—</strong>
+          <span data-i18n="home.ticker.batch">Nächste Charge</span>
+        </div>
+        <div class="roast-ticker__stat">
+          <strong class="js-roast-date">—</strong>
+          <span data-i18n="home.ticker.next">Nächster Rösttag</span>
+        </div>
+        <div class="roast-ticker__stat">
+          <strong class="js-roast-count">—</strong>
+          <span data-i18n="home.ticker.countdown">Countdown</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Werte ============ -->
+    <section class="values" aria-label="Warum Marlow">
+      <div class="container values__grid">
+        <div class="value reveal">
+          <span class="value__icon"><svg aria-hidden="true"><use href="#i-flame"/></svg></span>
+          <div>
+            <h3 data-i18n="home.v1.t">Wöchentlich geröstet</h3>
+            <p data-i18n="home.v1.p">Jede Tüte trägt ihr Röstdatum. Nichts verlässt das Lager älter als sieben Tage.</p>
+          </div>
+        </div>
+        <div class="value reveal" style="--reveal-delay: 60ms">
+          <span class="value__icon"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span>
+          <div>
+            <h3 data-i18n="home.v2.t">Direct Trade</h3>
+            <p data-i18n="home.v2.p">Langfristige Verträge, Preise deutlich über Fairtrade-Minimum.</p>
+          </div>
+        </div>
+        <div class="value reveal" style="--reveal-delay: 120ms">
+          <span class="value__icon"><svg aria-hidden="true"><use href="#i-truck"/></svg></span>
+          <div>
+            <h3 data-i18n="home.v3.t">Gratisversand ab 35 €</h3>
+            <p data-i18n="home.v3.p">Klimaneutral in 1–3 Werktagen, direkt aus der Rösterei.</p>
+          </div>
+        </div>
+        <div class="value reveal" style="--reveal-delay: 180ms">
+          <span class="value__icon"><svg aria-hidden="true"><use href="#i-cup"/></svg></span>
+          <div>
+            <h3 data-i18n="home.v4.t">Frische-Versprechen</h3>
+            <p data-i18n="home.v4.p">Nicht begeistert? Wir ersetzen oder erstatten — ohne Diskussion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Sortiment ============ -->
+    <section class="section" id="sortiment">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-i18n="home.shop.eyebrow">Die aktuellen Röstungen</p>
+          <h2 data-i18n="home.shop.title">Drei Kaffees, die wir gerade selbst trinken</h2>
+          <p data-i18n="home.shop.lede">Ganze Bohne oder frisch gemahlen — jede Tüte ist rückverfolgbar bis zur Farm.</p>
+        </div>
+        <div class="products__grid" id="featured-grid"></div>
+        <p style="text-align:center;margin:2.5rem 0 0">
+          <a class="btn btn--ghost" href="shop.html" data-i18n="home.shop.all">Das ganze Sortiment ansehen</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ Story ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="container grid-2">
+        <figure class="figure-quote img-frame reveal" style="margin:0">
+          <img src="assets/img/roastery-hall.webp" alt="Kupferfarbener Trommelröster in der Marlow-Rösterei" width="1280" height="720" loading="lazy">
+          <figcaption>
+            <strong data-i18n="home.story.figstrong">Unser 12-Kilo-Trommelröster „Greta“</strong> —
+            <span data-i18n="home.story.figspan">im Einsatz seit 2017, über 8.000 Chargen</span>
+          </figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow" data-i18n="home.story.eyebrow">Unsere Geschichte</p>
+          <h2 data-i18n="home.story.title">Vom Garagenröster zur Hafenstraße</h2>
+          <p data-i18n="home.story.p1">
+            Marlow begann 2014 mit einem gebrauchten 5-Kilo-Röster und einer sturen Idee:
+            Kaffee schmeckt besser, wenn die Person, die ihn anbaut, fair bezahlt wird —
+            und die Person, die ihn röstet, keine Eile hat.
+          </p>
+          <p data-i18n="home.story.p2">
+            Zehn Jahre später cuppen wir noch immer jede Charge von Hand, kaufen bei denselben
+            Familien in Guji und Huila und rösten nie mehr, als wir frisch verkaufen können.
+          </p>
+          <div class="story__stats">
+            <div><strong>10+</strong><span data-i18n="home.story.s1">Jahre Rösterfahrung</span></div>
+            <div><strong>14</strong><span data-i18n="home.story.s2">Partnerfarmen</span></div>
+            <div><strong>96k</strong><span data-i18n="home.story.s3">verschickte Tüten</span></div>
+          </div>
+          <p style="margin-top:2rem">
+            <a class="btn btn--primary" href="roesterei.html" data-i18n="home.story.cta">Die Rösterei kennenlernen</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Coffee-Finder-Quiz ============ -->
+    <section class="quiz section" id="finder">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-i18n="home.quiz.eyebrow">Coffee Finder</p>
+          <h2 data-i18n="home.quiz.title">Welche Röstung passt zu dir?</h2>
+          <p data-i18n="home.quiz.lede">Drei Fragen, eine ehrliche Empfehlung — kein Konto, keine E-Mail nötig.</p>
+        </div>
+        <div class="quiz__card" id="quiz-root"></div>
+      </div>
+    </section>
+
+    <!-- ============ Abo-Teaser ============ -->
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <p class="eyebrow" data-i18n="home.abo.eyebrow">Das Marlow-Abo</p>
+          <h2 data-i18n="home.abo.title">Nie wieder <em style="font-style:italic;color:var(--copper-deep)">leere</em> Kaffeedosen</h2>
+          <p data-i18n="home.abo.p">
+            Rhythmus wählen, Menge wählen, fertig: Wir verschicken deine Röstung an dem Tag,
+            an dem sie aus der Trommel kommt. Pausieren, wechseln oder kündigen — jederzeit.
+          </p>
+          <ul class="subscribe__perks" style="color:var(--roast)">
+            <li><svg aria-hidden="true" style="color:var(--copper-deep)"><use href="#i-check"/></svg><span data-i18n="home.abo.b1">10 % Rabatt auf jede Lieferung</span></li>
+            <li><svg aria-hidden="true" style="color:var(--copper-deep)"><use href="#i-check"/></svg><span data-i18n="home.abo.b2">Immer versandkostenfrei</span></li>
+            <li><svg aria-hidden="true" style="color:var(--copper-deep)"><use href="#i-check"/></svg><span data-i18n="home.abo.b3">Röstnotizen & Brühguide inklusive</span></li>
+          </ul>
+          <p style="margin-top:2rem">
+            <a class="btn btn--primary" href="abo.html" data-i18n="home.abo.cta">Abo konfigurieren</a>
+          </p>
+        </div>
+        <div class="img-frame reveal" style="aspect-ratio:4/3">
+          <img src="assets/img/beans-macro.webp" alt="Frisch geröstete Kaffeebohnen auf einem Kupfertablett" width="1280" height="720" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Café & Reservierung ============ -->
+    <section class="section" style="padding-top:0" id="besuch">
+      <div class="container grid-2">
+        <div class="img-frame reveal" style="aspect-ratio:16/10">
+          <img src="assets/img/cafe-interior.webp" alt="Innenraum des Marlow-Cafés mit Holztischen und Kupferlampen" width="1280" height="800" loading="lazy">
+        </div>
+        <div>
+          <p class="eyebrow" data-i18n="home.visit.eyebrow">Rösterei-Café</p>
+          <h2 data-i18n="home.visit.title">Komm vorbei — am besten mit Reservierung</h2>
+          <p data-i18n="home.visit.p">
+            Unser Café an der Hafenstraße ist Testlabor und Wohnzimmer zugleich:
+            Hier probierst du neue Ernten zuerst. Samstags wird es voll —
+            reserviere dir deinen Tisch in unter einer Minute.
+          </p>
+          <div class="visit-card" style="box-shadow:none;padding:1.5rem;margin-block:1.25rem">
+            <dl>
+              <div class="hours-row"><dt data-i18n="hours.monfri">Mo – Fr</dt><dd>8:00 – 18:00</dd></div>
+              <div class="hours-row"><dt data-i18n="hours.sat">Samstag</dt><dd>9:00 – 17:00</dd></div>
+              <div class="hours-row"><dt data-i18n="hours.sun">Sonntag</dt><dd data-i18n="hours.sun.v">Geschlossen — wir rösten</dd></div>
+            </dl>
+          </div>
+          <a class="btn btn--primary" href="reservierung.html">
+            <svg aria-hidden="true"><use href="#i-calendar"/></svg>
+            <span data-i18n="home.visit.cta">Jetzt Tisch reservieren</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Journal-Teaser ============ -->
+    <section class="section quotes" id="journal">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" data-i18n="home.journal.eyebrow">Aus dem Journal</p>
+          <h2 data-i18n="home.journal.title">Brühwissen & Geschichten von der Farm</h2>
+        </div>
+        <div class="post-grid" id="journal-teaser"></div>
+        <p style="text-align:center;margin:2.5rem 0 0">
+          <a class="btn btn--ghost" href="journal.html" data-i18n="home.journal.all">Alle Beiträge lesen</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Marlow Coffee Roasters — Startseite">
+            <svg class="brand__mark" aria-hidden="true"><use href="#i-bean"/></svg>
+            <span>
+              <span class="brand__name">MARLOW</span>
+              <span class="brand__tag">Coffee Roasters</span>
+            </span>
+          </a>
+          <p class="footer__about" data-i18n="footer.about">
+            Kleinserien-Specialty-Coffee, direkt gehandelt und mit Geduld geröstet —
+            seit 2014 in Münster.
+          </p>
+          <div class="footer__social">
+            <a href="#" aria-label="Marlow auf Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a href="#" aria-label="Marlow auf Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            <a href="mailto:hello@marlow.coffee" aria-label="E-Mail an Marlow"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
+          </div>
+        </div>
+
+        <nav aria-label="Shop-Links">
+          <h3 data-i18n="footer.shop">Shop</h3>
+          <ul>
+            <li><a class="footer__link" href="shop.html" data-i18n="footer.shop.all">Alle Kaffees</a></li>
+            <li><a class="footer__link" href="abo.html" data-i18n="footer.shop.abo">Kaffee-Abo</a></li>
+            <li><a class="footer__link" href="produkt.html?id=probierpaket" data-i18n="footer.shop.set">Probierpaket</a></li>
+            <li><a class="footer__link" href="b2b.html" data-i18n="footer.shop.b2b">Großhandel für Cafés</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Unternehmens-Links">
+          <h3 data-i18n="footer.company">Rösterei</h3>
+          <ul>
+            <li><a class="footer__link" href="roesterei.html" data-i18n="footer.co.story">Unsere Geschichte</a></li>
+            <li><a class="footer__link" href="reservierung.html" data-i18n="footer.co.reserve">Tisch reservieren</a></li>
+            <li><a class="footer__link" href="journal.html" data-i18n="footer.co.journal">Journal</a></li>
+            <li><a class="footer__link" href="kontakt.html" data-i18n="footer.co.contact">Kontakt & Anfahrt</a></li>
+          </ul>
+        </nav>
+
+        <div class="newsletter">
+          <h3 data-i18n="footer.nl">Newsletter</h3>
+          <form id="newsletter-form" novalidate>
+            <div class="field" style="margin-bottom:.75rem">
+              <label for="newsletter-email" data-i18n="footer.nl.label">Eine Mail im Monat: neue Röstungen, Cupping-Termine, Brühtipps.</label>
+              <div class="newsletter__row">
+                <input type="email" id="newsletter-email" name="email" autocomplete="email" required placeholder="du@beispiel.de" data-i18n-placeholder="footer.nl.ph">
+                <button class="btn btn--primary" type="submit" data-i18n="footer.nl.cta">Anmelden</button>
+              </div>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer__base">
+        <p>© <span id="year">2026</span> Marlow Coffee Roasters. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span></p>
+        <p>
+          <a href="#" data-i18n="footer.imprint">Impressum</a> ·
+          <a href="#" data-i18n="footer.privacy">Datenschutz</a> ·
+          <a href="#" data-i18n="footer.shipping">Versand & Retouren</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.en.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/hero-video.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>
