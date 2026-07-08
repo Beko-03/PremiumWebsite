@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { useI18n } from "@/lib/i18n";
 import { useUi } from "@/lib/ui";
+import { IS_DEMO } from "@/lib/site-config";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -147,6 +148,7 @@ export default function Footer() {
           <p>
             © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Marlow Coffee Roasters.{" "}
             <span>{t("footer.rights")}</span>
+            {IS_DEMO && <span className="demo-badge">{t("demo.badge")}</span>}
           </p>
           <p>
             <Link href="/impressum/">{t("footer.imprint")}</Link> ·{" "}

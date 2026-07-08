@@ -62,6 +62,10 @@ const STRINGS = {
   "footer.nl.ph": { de: "du@beispiel.de", en: "you@example.com" },
   "footer.nl.cta": { de: "Anmelden", en: "Sign up" },
   "footer.rights": { de: "Alle Rechte vorbehalten.", en: "All rights reserved." },
+  "demo.badge": {
+    de: "Demo · fiktives Beispielprojekt",
+    en: "Demo · fictional showcase project",
+  },
   "footer.imprint": { de: "Impressum", en: "Imprint" },
   "footer.privacy": { de: "Datenschutz", en: "Privacy" },
   "footer.shipping": { de: "Versand & Retouren", en: "Shipping & returns" },

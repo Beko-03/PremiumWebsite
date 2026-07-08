@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
+import { operator } from "@/lib/site-config";
 
 /* Datenschutzerklärung nach Art. 13 DSGVO.
    Der technische Teil beschreibt exakt das Verhalten dieser Seite:
@@ -50,13 +51,13 @@ export default function DatenschutzClient() {
               Datenschutz-Grundverordnung (DSGVO) ist:
             </p>
             <p>
-              [Firmenname / Inhaber]
+              {operator.name}
               <br />
-              [Straße und Hausnummer]
+              {operator.street}
               <br />
-              [PLZ und Ort], Deutschland
+              {operator.city}, {operator.country}
               <br />
-              E-Mail: hello@marlow.coffee
+              E-Mail: {operator.email}
             </p>
 
             <h2>2. Überblick — was diese Website tut (und was nicht)</h2>
@@ -153,13 +154,13 @@ export default function DatenschutzClient() {
             <h2>1. Controller</h2>
             <p>The controller responsible for data processing on this website under the GDPR is:</p>
             <p>
-              [Company name / owner]
+              {operator.name}
               <br />
-              [Street and number]
+              {operator.street}
               <br />
-              [Postal code and city], Germany
+              {operator.city}, {operator.country}
               <br />
-              E-mail: hello@marlow.coffee
+              E-mail: {operator.email}
             </p>
 
             <h2>2. Overview — what this website does (and does not)</h2>

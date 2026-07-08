@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
+import { operator } from "@/lib/site-config";
 
 /* Impressum nach § 5 DDG (früher § 5 TMG).
-   Platzhalter in [eckigen Klammern] vom Betreiber ausfüllen. */
+   Die Betreiberangaben kommen aus lib/site-config.ts. */
 
 export default function ImpressumClient() {
   const { lang, t } = useI18n();
@@ -35,51 +36,50 @@ export default function ImpressumClient() {
           }}
         >
           {lang === "de"
-            ? "Hinweis für den Betreiber: Bitte ersetzen Sie alle mit [eckigen Klammern] markierten Platzhalter durch Ihre echten Angaben. Dieses Impressum ist eine Vorlage und ersetzt keine Rechtsberatung."
-            : "Note for the operator: please replace every placeholder marked with [brackets] with your real details. This imprint is a template and is no substitute for legal advice."}
+            ? "„Marlow Coffee Roasters“ ist ein fiktives Beispielunternehmen. Diese Website ist eine Präsentations-Demo. Verantwortlich für den Betrieb der Demo ist der unten genannte Anbieter. Angaben in [eckigen Klammern] sind noch zu ergänzen; dies ersetzt keine Rechtsberatung."
+            : "“Marlow Coffee Roasters” is a fictional example business. This website is a presentation demo. The provider named below is responsible for operating the demo. Details in [brackets] still need to be completed; this is no substitute for legal advice."}
         </p>
 
         {lang === "de" ? (
           <>
             <h2>Angaben gemäß § 5 DDG</h2>
             <p>
-              [Firmenname / Inhaber]
+              {operator.name}
               <br />
-              [Straße und Hausnummer]
+              {operator.street}
               <br />
-              [PLZ und Ort]
+              {operator.city}
               <br />
-              Deutschland
+              {operator.country}
             </p>
-
-            <h2>Vertreten durch</h2>
-            <p>[Name der vertretungsberechtigten Person(en)]</p>
 
             <h2>Kontakt</h2>
             <p>
-              Telefon: [Telefonnummer]
-              <br />
-              E-Mail: hello@marlow.coffee
+              {operator.phone ? (
+                <>
+                  Telefon: {operator.phone}
+                  <br />
+                </>
+              ) : null}
+              E-Mail: {operator.email}
             </p>
 
-            <h2>Umsatzsteuer-Identifikationsnummer</h2>
-            <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-              <br />
-              [USt-IdNr., z. B. DE123456789]
-            </p>
-
-            <h2>Registereintrag</h2>
-            <p>
-              [Registergericht und Registernummer – nur bei eingetragenen Gesellschaften, sonst diesen
-              Abschnitt entfernen]
-            </p>
+            {operator.vatId ? (
+              <>
+                <h2>Umsatzsteuer-Identifikationsnummer</h2>
+                <p>
+                  Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
+                  <br />
+                  {operator.vatId}
+                </p>
+              </>
+            ) : null}
 
             <h2>Redaktionell verantwortlich</h2>
             <p>
-              [Name]
+              {operator.name}
               <br />
-              [Anschrift wie oben]
+              {operator.street}, {operator.city}
             </p>
 
             <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
@@ -120,37 +120,42 @@ export default function ImpressumClient() {
           <>
             <h2>Information pursuant to § 5 DDG (German Digital Services Act)</h2>
             <p>
-              [Company name / owner]
+              {operator.name}
               <br />
-              [Street and number]
+              {operator.street}
               <br />
-              [Postal code and city]
+              {operator.city}
               <br />
-              Germany
+              {operator.country}
             </p>
-
-            <h2>Represented by</h2>
-            <p>[Name of authorised representative(s)]</p>
 
             <h2>Contact</h2>
             <p>
-              Phone: [phone number]
-              <br />
-              E-mail: hello@marlow.coffee
+              {operator.phone ? (
+                <>
+                  Phone: {operator.phone}
+                  <br />
+                </>
+              ) : null}
+              E-mail: {operator.email}
             </p>
 
-            <h2>VAT identification number</h2>
-            <p>
-              VAT ID pursuant to § 27 a of the German VAT Act:
-              <br />
-              [VAT ID, e.g. DE123456789]
-            </p>
+            {operator.vatId ? (
+              <>
+                <h2>VAT identification number</h2>
+                <p>
+                  VAT ID pursuant to § 27 a of the German VAT Act:
+                  <br />
+                  {operator.vatId}
+                </p>
+              </>
+            ) : null}
 
             <h2>Responsible for content</h2>
             <p>
-              [Name]
+              {operator.name}
               <br />
-              [Address as above]
+              {operator.street}, {operator.city}
             </p>
 
             <h2>Online dispute resolution</h2>
